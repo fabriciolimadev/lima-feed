@@ -18,11 +18,18 @@ export function Post({name, role, avatar, content, publishedAt}) {
         locale: ptBR,
         addSuffix: true
     })
+
+    const [newCommentText, setNewCommentText] = useState('');
+
+    function handleNewCommentChange(){
+        setNewCommentText(event.target.value);
+    }
     
     function handleCreateNewComment(event) {
         event.preventDefault();
-        setComments([...comments, event.target.comment.value]);
-        console.log(event);
+        setComments([...comments, newCommentText]);
+        setNewCommentText('');
+
     }
 
     const [comments, setComments] = useState([
@@ -62,6 +69,8 @@ export function Post({name, role, avatar, content, publishedAt}) {
                     <textarea 
                     name='comment'
                     placeholder="Escreva um comentário..."
+                    value={newCommentText}
+                    onChange={handleNewCommentChange}
                     />
                     <footer>
                         <button type="submit">Comentar</button>
