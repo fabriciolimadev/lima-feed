@@ -21,13 +21,15 @@ export function Post({name, role, avatar, content, publishedAt}) {
     
     function handleCreateNewComment(event) {
         event.preventDefault();
-        setComments([...comments, comments.length + 1]);
+        setComments([...comments, event.target.comment.value]);
         console.log(event);
     }
 
     const [comments, setComments] = useState([
-        1,
-        2
+        "Nosso post muito bacana",
+        "Meus parabens, sucesso!",
+        "Oloco meu, que post top!",
+        "Genial, parabéns!"
     ])
 
     return (
@@ -68,7 +70,7 @@ export function Post({name, role, avatar, content, publishedAt}) {
 
                 <div className={style.commentList}>
                     {comments.map(comment => {
-                        return <Comment key={comment}/>
+                        return <Comment key={comment} content={comment}/>
                     })}
                 </div>
         </article>
