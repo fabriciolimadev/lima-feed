@@ -1,13 +1,9 @@
 # Lima Feed
 
-Uma breve descrição do que o seu projeto faz e para quem ele é.
+Um projeto de feed estilo redes sociais.
 
-## Índice
-
-- [Instalação](#instalação)
-- [Uso](#uso)
-- [Contribuição](#contribuição)
-- [Licença](#licença)
+## Tecnologias
+**React, Typescript, Css Modules**
 
 ## Instalação
 
